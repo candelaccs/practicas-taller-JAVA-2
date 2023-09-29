@@ -9,3 +9,59 @@ setDNI(X) modifica el DNI de la persona al “int” pasado por parámetro (X)
 setEdad(X) modifica la edad de la persona al “int” pasado por parámetro (X)
 toString() retorna un String que representa al objeto. Ej: “Mi nombre es Mauro, 
 mi DNI es 11203737 y tengo 70 años”
+
+
+package taller;
+
+/**
+ *
+ * @author cande
+ */
+
+import PaqueteLectura.Lector;
+import PaqueteLectura.GeneradorAleatorio;
+import taller.persona; // pasa algo o esta mal si lo importo del mismo paquete? //
+
+public class Taller {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        int dni;
+        int edad;
+        String nombre;
+        
+        System.out.println ("ingrese un nombre");
+        nombre = Lector.leerString();
+        //System.out.println ("ingrese su edad");
+        edad = GeneradorAleatorio.generarInt(101);
+        //System.out.println (" ingrerse su dni ");
+        dni = GeneradorAleatorio.generarInt(99999999);
+        
+        
+        persona humano = new persona (nombre, dni, edad);
+        
+        System.out.println (humano.toString());
+        
+        // se hace de esta manera //
+        
+        
+        
+        System.out.println("ingrese un nombre ");
+        humano.setNombre (Lector.leerString());
+        humano.setEdad(GeneradorAleatorio.generarInt(101));
+        humano.setDNI(GeneradorAleatorio.generarInt(99999999));
+        
+        
+        System.out.println (humano.toString());
+        
+        
+       // o se hace de esta manera? // 
+       
+       
+       // postdata: siempre me salen los mismos valores ??? //        
+    }
+    
+}
