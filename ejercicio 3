@@ -11,7 +11,7 @@ NOTA: utilizar la clase Persona. Pensar en la estructura de datos a utilizar. Pa
 Strings use el método equals.
 
 
-// SIN TERMINAR //
+
 
 package taller;
 
@@ -29,10 +29,10 @@ public class Taller {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+   public static void main(String[] args) {
         
-        persona [][] casting = new persona [5][8]; //5 dias y 8 turnos? //
-        persona humano = new persona ();
+        Persona [][] casting = new Persona [5][8]; //5 dias y 8 turnos? //
+    
         String nombre;
         int dni;
         int edad;
@@ -42,17 +42,32 @@ public class Taller {
         
         System.out.println ("ingrese su nombre");
         nombre = Lector.leerString();
-        System.out.println ("ingrese su edad");
-        edad = Lector.leerInt();
-        System.out.println ("ingrese su dni");
-        dni = Lector.leerInt();
-        
-        while (nombre != "zzz") && (){
-           
-            humano (nombre,dni,edad);
-            casting [dim1][dim2] = humano;
-            dim1 = dim1 +1;
-            dim2= dim2 +1;
+        int i=0;
+        int j;
+        while (!(nombre.equals("zzz")) && (i < 5)){
+            j=0;
+            while ((nombre != "zzz") && (j <8)){
+              System.out.println ("ingrese su edad");
+              edad = Lector.leerInt();
+              System.out.println ("ingrese su dni");
+              dni = Lector.leerInt();
+              Persona humano = new Persona (nombre,dni,edad);
+              casting [i][j] = humano;
+              j++;
+              System.out.println ("ingrese su nombre");
+              nombre = Lector.leerString();
+            }
+            if (j == 8)
+             i++;
+        }
+        int ii;
+        int jj;
+        for (ii=0; ii<i; ii++) {
+            
+            for (jj=0; jj<j; j++ ){
+                System.out.println("el nombre de la persona que esta asignada en el dia " + i + " en el turno " + j + " es ");
+                System.out.println(casting [i][j].getNombre());
+            }
         }
     }  
     
