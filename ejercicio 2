@@ -16,15 +16,11 @@ import PaqueteLectura.Lector;
 import PaqueteLectura.GeneradorAleatorio;
 import taller.persona; // pasa algo o esta mal si lo importo del mismo paquete? //
 
-public class Taller {
+public class *nombre*
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
+public static void main(String[] args) {
         
-        persona [] vector = new persona [15];
-        persona humano = new persona ();
+        Persona [] vector = new Persona [15];
         int diml =0;
         String nombre;
         int edad;
@@ -34,23 +30,27 @@ public class Taller {
         edad = GeneradorAleatorio.generarInt(101);
         dni = GeneradorAleatorio.generarInt(99999999);
         
-        while ( dni <> 0) && (diml <15) { // me tira error //
+        while (( dni != 0) && (diml <15)) { // me tira error // act: todo va entre parentesis //
             
-           humano (nombre, dni, edad); // como asigno aca ? //
+           Persona humano = new Persona (nombre, dni, edad); // como asigno aca ? // act: como es un PUNTERO cada vez que entra una persona nueva tengo que hacer un new (otro puntero //
            vector [diml] = humano;
-            diml = diml+1;
+           diml = diml+1;
+           nombre = GeneradorAleatorio.generarString(27);
+           dni = GeneradorAleatorio.generarInt(99999999);
+           edad = GeneradorAleatorio.generarInt(101);
+           
         }
         
         int i;
         int mayor65=0;
         int menorDni = -1;
-        persona humano2 = new persona();
+        Persona humano2 =null;
         for (i=0; i<diml; i++) {
             
-            if (vector [i].edad > 65) // como accedo a edad ? //
+            if (vector [i].getEdad()> 65) // como accedo a edad ? //
                 mayor65 = mayor65 +1;
-            if (vector [i].edad < menorDni) {
-                menorDni = vector [i].edad;
+            if (vector [i].getDNI() < menorDni) {
+                menorDni = vector [i]. getDNI();
                 humano2 = vector[i];
             }    
         }
