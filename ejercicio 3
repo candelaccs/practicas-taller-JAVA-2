@@ -1,0 +1,59 @@
+- Se realizará un casting para un programa de TV. El casting durará a lo sumo 5 días y en
+cada día se entrevistarán a 8 personas en distinto turno.
+a) Simular el proceso de inscripción de personas al casting. A cada persona se le pide
+nombre, DNI y edad y se la debe asignar en un día y turno de la siguiente manera: las
+personas primero completan el primer día en turnos sucesivos, luego el segundo día y así
+siguiendo. La inscripción finaliza al llegar una persona con nombre “ZZZ” o al cubrirse los
+40 cupos de casting.
+Una vez finalizada la inscripción:
+b) Informar para cada día y turno asignado, el nombre de la persona a entrevistar.
+NOTA: utilizar la clase Persona. Pensar en la estructura de datos a utilizar. Para comparar
+Strings use el método equals.
+
+
+// SIN TERMINAR //
+
+package taller;
+
+/**
+ *
+ * @author cande
+ */
+
+import PaqueteLectura.Lector;
+import PaqueteLectura.GeneradorAleatorio;
+import taller.persona; // pasa algo o esta mal si lo importo del mismo paquete? //
+
+public class Taller {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        persona [][] casting = new persona [5][8]; //5 dias y 8 turnos? //
+        persona humano = new persona ();
+        String nombre;
+        int dni;
+        int edad;
+        int dim1=0;
+        int dim2=0;
+        
+        
+        System.out.println ("ingrese su nombre");
+        nombre = Lector.leerString();
+        System.out.println ("ingrese su edad");
+        edad = Lector.leerInt();
+        System.out.println ("ingrese su dni");
+        dni = Lector.leerInt();
+        
+        while (nombre != "zzz") && (){
+           
+            humano (nombre,dni,edad);
+            casting [dim1][dim2] = humano;
+            dim1 = dim1 +1;
+            dim2= dim2 +1;
+        }
+    }  
+    
+}
