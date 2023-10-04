@@ -11,8 +11,6 @@ NOTA: utilizar la clase Persona. Pensar en la estructura de datos a utilizar. Pa
 Strings use el método equals.
 
 
-
-
 package taller;
 
 /**
@@ -31,27 +29,24 @@ public class Taller {
      */
    public static void main(String[] args) {
         
-        Persona [][] casting = new Persona [5][8]; //5 dias y 8 turnos? //
+        persona [][] casting = new persona [5][8]; //5 dias y 8 turnos? //
     
         String nombre;
         int dni;
         int edad;
-        int dim1=0;
-        int dim2=0;
-        
         
         System.out.println ("ingrese su nombre");
         nombre = Lector.leerString();
         int i=0;
-        int j;
+        int j=0;
         while (!(nombre.equals("zzz")) && (i < 5)){
             j=0;
-            while ((nombre != "zzz") && (j <8)){
+            while (!(nombre.equals("zzz")) && (j <8)){
               System.out.println ("ingrese su edad");
               edad = Lector.leerInt();
               System.out.println ("ingrese su dni");
               dni = Lector.leerInt();
-              Persona humano = new Persona (nombre,dni,edad);
+              persona humano = new persona (nombre,dni,edad);
               casting [i][j] = humano;
               j++;
               System.out.println ("ingrese su nombre");
@@ -60,15 +55,22 @@ public class Taller {
             if (j == 8)
              i++;
         }
-        int ii;
-        int jj;
-        for (ii=0; ii<i; ii++) {
-            
-            for (jj=0; jj<j; j++ ){
+        int dim1 = i;
+        
+        int dim2 = j;
+        
+        for (i=0; i<dim1; i++) {
+   
+            for (j=0; j<8; j++ ){
                 System.out.println("el nombre de la persona que esta asignada en el dia " + i + " en el turno " + j + " es ");
                 System.out.println(casting [i][j].getNombre());
-            }
+            } 
+        }
+        
+        for (j=0; j<dim2; j++){
+            System.out.println (" el nombre de la persona que esta asignada en el dia " + i + " en el turno " + j + "es " );
+            System.out.println (casting [i][j].getNombre());
         }
     }  
     
-}
+} // me sale la misma persona en [1][2] y en [1][2] // que pelotuda ya lo arregle //
